@@ -7,7 +7,7 @@
 
 ## Usage
 
-  For Usage and Instructions checkout the [Crab Wiki](https://github.com/muricoca/crab/wiki)
+  For Usage and Instructions checkout the [Crab Wiki](https://github.com/sevenguin/crab.wiki)
 
 ## History
   

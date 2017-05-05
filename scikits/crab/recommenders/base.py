@@ -21,4 +21,7 @@ from ..base import BaseRecommender
 
 
 class MemoryBasedRecommender(BaseRecommender):
-    pass
+
+    def _set_params(self, **params):
+        pass
+

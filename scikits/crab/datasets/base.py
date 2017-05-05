@@ -84,10 +84,9 @@ def load_movielens_r100k(load_timestamp=False):
         data_t.append((int(item_id), label))
     data_titles = dict(data_t)
 
-    fdescr = open(dirname(__file__) + '/descr/movielens100k.rst')
-
-    return Bunch(data=data_movies, item_ids=data_titles,
-                 user_ids=None, DESCR=fdescr.read())
+    with open(dirname(__file__) + '/descr/movielens100k.rst') as fdescr:
+        return Bunch(data=data_movies, item_ids=data_titles,
+                     user_ids=None, DESCR=fdescr.read())
 
 
 def load_sample_songs():
@@ -123,7 +122,8 @@ def load_sample_songs():
 
     #Read data
     data_m = np.loadtxt(base_dir + 'sample_songs.csv',
-                delimiter=',', dtype=str)
+                delimiter=',', dtype=np.dtype([('user', np.str_, 32), ('item', np.str_, 32), ('score', np.float)]))
+
     item_ids = []
     user_ids = []
     data_songs = {}
@@ -135,7 +135,7 @@ def load_sample_songs():
         u_ix = user_ids.index(user_id) + 1
         i_ix = item_ids.index(item_id) + 1
         data_songs.setdefault(u_ix, {})
-        data_songs[u_ix][i_ix] = float(rating)
+        data_songs[u_ix][i_ix] = rating
 
     data_t = []
     for no, item_id in enumerate(item_ids):
@@ -147,10 +147,9 @@ def load_sample_songs():
         data_u.append((no + 1, user_id))
     data_users = dict(data_u)
 
-    fdescr = open(dirname(__file__) + '/descr/sample_songs.rst')
-
-    return Bunch(data=data_songs, item_ids=data_titles,
-                 user_ids=data_users, DESCR=fdescr.read())
+    with open(dirname(__file__) + '/descr/sample_songs.rst') as fdescr:
+        return Bunch(data=data_songs, item_ids=data_titles,
+                     user_ids=data_users, DESCR=fdescr.read())
 
 
 def load_sample_movies():
@@ -186,7 +185,7 @@ def load_sample_movies():
 
     #Read data
     data_m = np.loadtxt(base_dir + 'sample_movies.csv',
-                delimiter=';', dtype=str)
+                delimiter=';', dtype=np.dtype([('user', np.str_, 32), ('item', np.str_, 32), ('score', np.float)]))
     item_ids = []
     user_ids = []
     data_songs = {}
@@ -198,7 +197,7 @@ def load_sample_movies():
         u_ix = user_ids.index(user_id) + 1
         i_ix = item_ids.index(item_id) + 1
         data_songs.setdefault(u_ix, {})
-        data_songs[u_ix][i_ix] = float(rating)
+        data_songs[u_ix][i_ix] = rating
 
     data_t = []
     for no, item_id in enumerate(item_ids):
@@ -210,7 +209,6 @@ def load_sample_movies():
         data_u.append((no + 1, user_id))
     data_users = dict(data_u)
 
-    fdescr = open(dirname(__file__) + '/descr/sample_movies.rst')
-
-    return Bunch(data=data_songs, item_ids=data_titles,
-                 user_ids=data_users, DESCR=fdescr.read())
+    with open(dirname(__file__) + '/descr/sample_movies.rst') as fdescr:
+        return Bunch(data=data_songs, item_ids=data_titles,
+                     user_ids=data_users, DESCR=fdescr.read())

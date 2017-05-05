@@ -14,9 +14,9 @@ can be subclassed).
 #
 # License: BSD Style.
 
-from base import ItemRecommender, UserRecommender
-from item_strategies import ItemsNeighborhoodStrategy
-from neighborhood_strategies import NearestNeighborsStrategy
+from .base import ItemRecommender, UserRecommender
+from .item_strategies import ItemsNeighborhoodStrategy
+from .neighborhood_strategies import NearestNeighborsStrategy
 import numpy as np
 
 
@@ -533,8 +533,9 @@ class UserBasedRecommender(UserRecommender):
         prefs = np.array([self.model.preference_value(to_user_id, item_id)
                  for to_user_id in nearest_neighbors])
 
+
+        similarities = similarities[~np.isnan(prefs)]    # similarities must set before prefs
         prefs = prefs[~np.isnan(prefs)]
-        similarities = similarities[~np.isnan(prefs)]
 
         prefs_sim = np.sum(prefs[~np.isnan(similarities)] *
                              similarities[~np.isnan(similarities)])

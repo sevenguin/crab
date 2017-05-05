@@ -6,9 +6,10 @@ Base Recommender Models.
 
 # Authors: Marcel Caraciolo <marcel@muricoca.com>
 #          Bruno Melo <bruno@muricoca.com>
+#          sevenguin <scuwei@foxmail.com>
 # License: BSD Style.
 
-from scikits.learn.base import BaseEstimator
+from sklearn.base import BaseEstimator
 
 
 class BaseRecommender(BaseEstimator):

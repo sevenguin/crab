@@ -7,7 +7,7 @@
 
 ## Usage
 
-  For Usage and Instructions checkout the [Crab Wiki](https://github.com/sevenguin/crab.wiki)
+  For Usage and Instructions checkout the [Crab Wiki](https://github.com/sevenguin/crab/wiki)
 
 ## History
   
@@ -41,7 +41,7 @@
 
 ## Wiki
 
-Please check our [Wiki](https://github.com/muricoca/crab/wiki "Crab Wiki") wiki, for further information on how to start developing or use Crab in your projects.
+Please check our [Wiki](https://github.com/sevenguin/crab/wiki "Crab Wiki") wiki, for further information on how to start developing or use Crab in your projects.
 
 ## LICENCE (BSD)
 

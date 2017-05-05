@@ -1,47 +1,4 @@
-# Crab - A Recommendation Engine library for Python
-
-  Crab is a ﬂexible, fast recommender engine for Python that integrates classic information ﬁltering recom- 
-  mendation algorithms in the world of scientiﬁc Python packages (numpy, scipy, matplotlib). The engine aims 
-  to provide a rich set of components from which you can construct a customized recommender system from a 
-  set of algorithms.
-
-## Usage
-
-  For Usage and Instructions checkout the [Crab Wiki](https://github.com/sevenguin/crab/wiki)
-
-## History
-  
-  The project was started in 2010  by Marcel Caraciolo as a M.S.C related  project, and since then many people interested joined to help in the project.
-  It is currently maintained by a team of volunteers, members of the Muriçoca Labs.
-
-## Authors
-  
-  Marcel Caraciolo (marcel@muricoca.com)
-
-  Bruno Melo (bruno@muricoca.com)
-  
-  Ricardo Caspirro (ricardo@muricoca.com)
-  
-  Rodrigo Alves (rodrigo@muricoca.com)
-
-## Bugs, Feedback
-
-  Please submit bugs you might encounter, as well Patches and Features Requests to the [Issues Tracker](https://github.com/muricoca/crab/issues) located at GitHub.
-
-## Contributions
-
-  If you want to submit a patch to this project, it is AWESOME. Follow this guide:
-  
-  * Fork Crab
-  * Make your alterations and commit
-  * Create a topic branch - git checkout -b my_branch
-  * Push to your branch - git push origin my_branch
-  * Create a [Pull Request](http://help.github.com/pull-requests/) from your branch.
-  * You just contributed to the Crab project!
-
-## Wiki
-
-Please check our [Wiki](https://github.com/sevenguin/crab/wiki "Crab Wiki") wiki, for further information on how to start developing or use Crab in your projects.
+Forked from [crab](https://github.com/muricoca/crab), supported python3.4+ and fixed some bugs.
 
 ## LICENCE (BSD)
 

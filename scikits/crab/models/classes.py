@@ -266,12 +266,12 @@ class MatrixPreferenceDataModel(BaseDataModel):
 
         #think in a way to return as numpy array and how to remove the nan values efficiently.
         data = list(zip(self._user_ids, preferences.flatten()))
-        if order_by_id:
-            return [(user_id, preference)  for user_id, preference in data \
+        without_nan = [(user_id, preference)  for user_id, preference in data \
                          if not np.isnan(preference)]
+        if order_by_id:
+            return without_nan
         else:
-            return sorted([(user_id, preference)  for user_id, preference in data \
-                         if not np.isnan(preference)], key=lambda user: - user[1])
+            return sorted(without_nan, key=lambda user: - user[1])
 
     def preference_value(self, user_id, item_id):
         '''

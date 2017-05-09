@@ -52,5 +52,11 @@ class ItemsNeighborhoodStrategy(BaseCandidateItemsStrategy):
                     possible_items = np.append(possible_items, \
                         data_model.items_from_user(user_id))
         possible_items = np.unique(possible_items)
-
+        # actually, it's just return the item that the user dosn't rated
         return np.setdiff1d(possible_items, preferences, assume_unique=True)
+
+class ItemsNeighborhoodWithSimilarity(BaseCandidateItemsStrategy):
+    '''
+    Returns all item that with the similarity with the given user
+    '''
+    pass

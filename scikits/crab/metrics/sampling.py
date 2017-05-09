@@ -69,7 +69,7 @@ class SplitSampling(object):
 
         rng = self.random_state = check_random_state(self.random_state)
         n_train = ceil(self.evaluation_fraction * self.n)
-        #random partition
+        #random partition, Randomly permute a sequence
         permutation = rng.permutation(self.n) if permutation \
                              else np.arange(self.n)
         ind_train = permutation[-n_train:]

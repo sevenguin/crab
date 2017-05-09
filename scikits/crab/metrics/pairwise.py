@@ -8,12 +8,13 @@ sets of points.
 # Authors: Marcel Caraciolo <marcel@muricoca.com>
 #          Bruno Melo <bruno@muricoca.com>
 # License: BSD Style.
+# 20170509 sevenguin modify function name euclidian_distances
 
 import numpy as np
 import scipy.spatial.distance as ssd
 
 
-def euclidean_distances(X, Y, squared=False, inverse=True):
+def euclidian_distances(X, Y, squared=False, inverse=True):
     """
     Considering the rows of X (and Y=X) as vectors, compute the
     distance matrix between each pair of vectors.
@@ -73,8 +74,6 @@ def euclidean_distances(X, Y, squared=False, inverse=True):
 
     XY = ssd.cdist(X, Y)
     return  np.divide(1.0, (1.0 + XY)) if inverse else XY
-
-euclidian_distances = euclidean_distances  # both spelling for backward compat
 
 
 def pearson_correlation(X, Y):
@@ -176,7 +175,7 @@ def jaccard_coefficient(X, Y):
         result.append([])
         for arrayY in Y:
             n_XY = np.intersect1d(arrayY, arrayX).size
-            result[i].append(n_XY / (float(len(arrayX)) + len(arrayY) - n_XY))
+            result[i].append(n_XY / (float(len(arrayX)) + len(arrayY) - n_XY))   #|X∩Y|/|X∪Y|
         result[i] = np.array(result[i])
         i += 1
 

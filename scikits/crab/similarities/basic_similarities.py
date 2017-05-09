@@ -18,14 +18,14 @@ def find_common_elements(source_preferences, target_preferences):
     src = dict(source_preferences)
     tgt = dict(target_preferences)
 
-    inter = np.intersect1d(list(src.keys()), list(tgt.keys()))
+    inter = np.intersect1d(list(src.keys()), list(tgt.keys()))  # the intersection of two arrays
 
     common_preferences = list(zip(*[(src[item], tgt[item]) for item in inter \
             if not np.isnan(src[item]) and not np.isnan(tgt[item])]))
     if common_preferences:
         return np.asarray([common_preferences[0]]), np.asarray([common_preferences[1]])
     else:
-            return np.asarray([[]]), np.asarray([[]])
+        return np.asarray([[]]), np.asarray([[]])
 
 ###############################################################################
 # User Similarity

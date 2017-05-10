@@ -170,7 +170,7 @@ class ItemBasedRecommender(ItemRecommender):
 
         if not self.model.has_preference_values():
             prefs = [(pref, 1.0) for pref in prefs]
-
+        # base the history of the user, find the similarity item that user dosn't rated
         similarities = \
             np.array([self.similarity.get_similarity(item_id, to_item_id) \
             for to_item_id, pref in prefs if to_item_id != item_id]).flatten()

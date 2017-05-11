@@ -10,10 +10,32 @@ Several Basic Data models.
 
 import numpy as np
 from .base import BaseDataModel
-from .utils import UserNotFoundError, ItemNotFoundError
+from .utils import UserNotFoundError, ItemNotFoundError, UserParamsTypeError
 import logging
 
 logger = logging.getLogger('crab')
+
+
+class UserParamsVector(object):
+    '''Vector with the params value
+    np.array(\theta_1,\theta_2,...,\theta_{n})
+    n is the number of the features
+    '''
+    def __init__(self, params):
+        if type(params) is list:
+            self._params = np.array(params)
+        elif type(params) is np.array:
+            self._params = params
+        else:
+            raise UserParamsTypeError("params must be list or np.array")
+
+    @property
+    def params(self):
+        return self._params
+
+    @params.setter
+    def params(self, params):
+        self._params = params
 
 
 ###############################################################################

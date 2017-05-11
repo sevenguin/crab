@@ -14,3 +14,7 @@ class UserNotFoundError(Exception):
 
 class ItemNotFoundError(Exception):
     pass
+
+
+class UserParamsTypeError(Exception):
+    pass
